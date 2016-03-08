@@ -20,6 +20,19 @@ NOTES: Don't create new string.
 #include <stdio.h>
 
 
-void number_to_str(float number, char *str,int afterdecimal){
-	
+void number_to_str(float number, char *str, int afterdecimal)
+{
+	int flag = 0;
+	sprintf(str, "%g", number);/*sprintf function will convert a number to string*/
+	for (int i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] == '.')
+			flag = 1;
+		if (flag)
+		{
+			str[afterdecimal + i + 1] = '\0';
+		}
+	}
+
+
 }

@@ -11,6 +11,12 @@ ERROR CASES: Return '\0' for invalid inputs.
 NOTES:
 */
 
-char KthIndexFromEnd(char *str, int K) {
-	return '\0';
+#include<stdio.h>
+char KthIndexFromEnd(char *str, int K)
+{
+	if (str == NULL || str[0] == '\0' || K<0)
+		return '\0';
+	int stringlen = 0;
+	for (int i = 0; str[i] != '\0'; i++)stringlen++;/*calculating the length of the string*/
+	return str[stringlen - (K + 1)];
 }
