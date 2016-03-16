@@ -26,7 +26,20 @@ int main(){
 	//StrWordsinRev
 
 	//commonWords
+	char *str1 = "the are all is well";
+	char *str2 = "are all";
+	char **a;
 
-
+	a = commonWords(str1, str2);
+	if (a == NULL)
+	{
+		printf("no common words");
+		return 0;
+	}
+	for (int i = 0; i<2; i++)
+	{
+		printf("%s ", a[i]);
+	}
+	getchar();
 	return 0;
 }
